@@ -3,7 +3,6 @@ import { toUidFromSchema } from 'zenbox-util/uid'
 import { getDuplicatesRefinement } from 'zenbox-util/zod'
 import { AddressSchema } from './Address'
 import { AmountSchema } from '../../finance/models/Amount'
-import { Id } from '../../generic/models/Id'
 
 export const BalanceSchema = z.object({
   address: AddressSchema,
