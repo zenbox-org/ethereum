@@ -1,0 +1,39 @@
+import { z } from 'zod'
+import { toUidFromSchema } from 'zenbox-util/uid'
+import { getArraySchema } from 'zenbox-util/zod'
+import { AddressSchema } from './Address'
+import { todo } from 'zenbox-util/todo'
+import { BN } from '../../bn'
+
+export const AmountBNSchema = z.instanceof(BN)
+  .refine(n => !n.isNegative())
+  .describe('Amount')
+
+todo(AmountBNSchema, 'Take from shield-contracts')
+
+export const BalanceBNSchema = z.object({
+  address: AddressSchema,
+  amount: AmountBNSchema,
+})
+
+export const BalancesBNSchema = getArraySchema(BalanceBNSchema, getBalanceBNUid)
+
+export const BalanceBNUidSchema = BalanceBNSchema.pick({
+  address: true,
+})
+
+export type BalanceBN = z.infer<typeof BalanceBNSchema>
+
+export type BalanceBNUid = z.infer<typeof BalanceBNUidSchema>
+
+export function validateBalanceBN(balance: BalanceBN): BalanceBN {
+  return BalanceBNSchema.parse(balance)
+}
+
+export function validateBalancesBN(balances: BalanceBN[]): BalanceBN[] {
+  return BalancesBNSchema.parse(balances)
+}
+
+export function getBalanceBNUid(balanceUid: BalanceBNUid) {
+  return toUidFromSchema(balanceUid, BalanceBNUidSchema)
+}
