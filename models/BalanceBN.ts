@@ -2,14 +2,7 @@ import { z } from 'zod'
 import { toUidFromSchema } from 'zenbox-util/uid'
 import { getArraySchema } from 'zenbox-util/zod'
 import { AddressSchema } from './Address'
-import { todo } from 'zenbox-util/todo'
-import { BN } from '../../bn'
-
-export const AmountBNSchema = z.instanceof(BN)
-  .refine(n => !n.isNegative())
-  .describe('Amount')
-
-todo(AmountBNSchema, 'Take from shield-contracts')
+import { AmountBNSchema } from './AmountBN'
 
 export const BalanceBNSchema = z.object({
   address: AddressSchema,
