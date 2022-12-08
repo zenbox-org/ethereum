@@ -1,6 +1,6 @@
 import { Address } from '../Address'
 import { Amount } from '../../../finance/models/Amount'
-import { impl } from 'zenbox-util/todo'
+import { impl } from 'libs/utils/todo'
 import { Token } from '../Token'
 
 export function transferFrom(token: Token, from: Address, to: Address, amount: Amount) {

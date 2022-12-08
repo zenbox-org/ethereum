@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { getArraySchema } from 'zenbox-util/zod'
+import { getArraySchema } from 'libs/utils/zod'
 import { BN } from '../../bn'
 
 export const AmountSignedBNSchema = z.instanceof(BN).describe('AmountSignedBN')

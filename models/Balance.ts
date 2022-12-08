@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import { toUidFromSchema } from 'zenbox-util/uid'
-import { getDuplicatesRefinement } from 'zenbox-util/zod'
+import { toUidFromSchema } from 'libs/utils/uid'
+import { getDuplicatesRefinement } from 'libs/utils/zod'
 import { AddressSchema } from './Address'
 import { AmountSchema } from '../../finance/models/Amount'
 

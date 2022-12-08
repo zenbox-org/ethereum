@@ -1,5 +1,5 @@
 import { getTokenUid, Token, TokenSchema } from '../models/Token'
-import { getFinder, getInserter } from 'zenbox-util/zod'
+import { getFinder, getInserter } from 'libs/utils/zod'
 import { ColiBscMainnetContract, ColiEthMainnetContract, UsdcEthMainnetContract, UsdtEthMainnetContract } from './allContracts'
 import { ColiDesign, USDCDesign, USDTDesign } from './allTokenDesigns'
 

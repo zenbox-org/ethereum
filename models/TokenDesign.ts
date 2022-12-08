@@ -1,10 +1,10 @@
 import { z } from 'zod'
 import { TickerSchema } from '../../finance/models/Ticker'
 import { AmountSchema } from '../../finance/models/Amount'
-import { getDuplicatesRefinement } from 'zenbox-util/zod'
+import { getDuplicatesRefinement } from 'libs/utils/zod'
 import { NameSchema } from '../../generic/models/Name'
 import { DecimalsSchema } from './Decimals'
-import { toUidFromSchema } from 'zenbox-util/uid'
+import { toUidFromSchema } from 'libs/utils/uid'
 
 export const TokenDesignSchema = z.object({
   name: NameSchema,

@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import { toUidFromSchema } from 'zenbox-util/uid'
-import { getArraySchema } from 'zenbox-util/zod'
+import { toUidFromSchema } from 'libs/utils/uid'
+import { getArraySchema } from 'libs/utils/zod'
 import { AddressSchema } from './Address'
 import { AmountBNSchema } from './AmountBN'
 

@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { getDuplicatesRefinement } from 'zenbox-util/zod'
+import { getDuplicatesRefinement } from 'libs/utils/zod'
 import { ContractTypeSchema } from './ContractType'
 import { BlockchainNetworkSchema, BlockchainNetworkUidSchema } from '../../blockchain/models/BlockchainNetwork'
 import { AddressSchema } from './Address'

@@ -1,8 +1,8 @@
 import { getTokenDesignUid, TokenDesign, TokenDesignSchema } from '../models/TokenDesign'
-import { getFinder, getInserter } from 'zenbox-util/zod'
-import { num } from 'zenbox-util/bignumber'
+import { getFinder, getInserter } from 'libs/utils/zod'
+import { num } from 'libs/utils/bignumber'
 import { D18, D6 } from './allDecimals'
-import { todo } from 'zenbox-util/todo'
+import { todo } from 'libs/utils/todo'
 
 export const allTokenDesigns: TokenDesign[] = []
 

@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { getDuplicatesRefinement } from 'zenbox-util/zod'
+import { getDuplicatesRefinement } from 'libs/utils/zod'
 import { TassetSchema } from '../../finance/models/Tasset'
 import { ContractSchema, ContractUidSchema } from './Contract'
 

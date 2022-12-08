@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { BigNumber } from 'zenbox-util/bignumber'
+import { BigNumber } from 'libs/utils/bignumber'
 
 export const DecimalsSchema = z.instanceof(BigNumber)
 

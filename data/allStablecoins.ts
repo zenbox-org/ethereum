@@ -1,6 +1,6 @@
 import { parseTassetUid, Tasset } from '../../finance/models/Tasset'
 import { USDC, USDT } from '../../finance/data/allTassets'
-import { byUid } from 'zenbox-util/uid'
+import { byUid } from 'libs/utils/uid'
 
 export const allStablecoins: Tasset[] = [
   USDT,
