@@ -1,3 +1,3 @@
-import { validateAddress } from '../models/Address'
+import { parseAddress } from '../models/Address'
 
-export const ZeroAddress = validateAddress('0x0000000000000000000000000000000000000000')
+export const ZeroAddress = parseAddress('0x0000000000000000000000000000000000000000')

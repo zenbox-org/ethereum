@@ -1,8 +1,7 @@
 import { getAddress as normalizeAddress } from 'ethers/lib/utils'
+import { isEqualByDC } from 'libs/utils/lodash'
+import { getArraySchema } from 'libs/utils/zod'
 import { z } from 'zod'
-import Error from 'next/error'
-
-export type Address = string
 
 export const AddressSchema = z.string().superRefine((value, ctx) => {
   try {
@@ -17,18 +16,30 @@ export const AddressSchema = z.string().superRefine((value, ctx) => {
       throw error
     }
   }
-}).transform(normalizeAddress)
+}).transform(normalizeAddress).describe('Address')
 
-export interface Addressed { address: Address }
+export const AddressUidSchema = AddressSchema
 
-export function validateAddress(address: Address) {
+export const AddressesSchema = getArraySchema(AddressSchema, parseAddressUid)
+
+export interface WithAddress { address: Address }
+
+export type Address = z.infer<typeof AddressSchema>
+
+export type AddressUid = z.infer<typeof AddressUidSchema>
+
+export function parseAddress(address: Address): Address {
   return AddressSchema.parse(address)
 }
 
-export function validateAddresses(addresses: Address[]) {
-  return addresses.map(validateAddress)
+export function parseAddresses(addresss: Address[]): Address[] {
+  return AddressesSchema.parse(addresss)
 }
 
-export function getAddressUid(address: Address): string {
-  return address
+export function parseAddressUid(addressUid: AddressUid): AddressUid {
+  return AddressUidSchema.parse(addressUid)
 }
+
+export const isEqualAddress = isEqualByDC(parseAddressUid)
+
+export const toAddresses = (objects: WithAddress[]) => objects.map(o => o.address)
