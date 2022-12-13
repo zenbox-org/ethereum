@@ -1,8 +1,7 @@
-import { z } from 'zod'
-import { toUidFromSchema } from 'libs/utils/uid'
 import { getDuplicatesRefinement } from 'libs/utils/zod'
-import { AddressSchema } from './Address'
+import { z } from 'zod'
 import { AmountSchema } from '../../finance/models/Amount'
+import { AddressSchema } from './Address'
 
 export const BalanceSchema = z.object({
   address: AddressSchema,
@@ -29,5 +28,5 @@ export function validateBalances(balances: Balance[]): Balance[] {
 }
 
 export function getBalanceUid(balanceUid: BalanceUid) {
-  return toUidFromSchema(balanceUid, BalanceUidSchema)
+  return BalanceUidSchema.parse(balanceUid)
 }

@@ -1,5 +1,5 @@
-import { z } from 'zod'
 import { getDuplicatesRefinement } from 'libs/utils/zod'
+import { z } from 'zod'
 import { AssetSchema } from '../../finance/models/Asset'
 import { ContractSchema, ContractUidSchema } from './Contract'
 

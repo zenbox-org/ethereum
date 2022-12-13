@@ -1,10 +1,8 @@
-import { z } from 'zod'
-import { toUidFromSchema } from 'libs/utils/uid'
 import { getDuplicatesRefinement } from 'libs/utils/zod'
-import { ContractSchema, ContractUidSchema } from './Contract'
+import { z } from 'zod'
 import { BalancesSchema } from './Balance'
+import { ContractSchema, ContractUidSchema } from './Contract'
 import { TokenDesignSchema } from './TokenDesign'
-import { Id } from '../../generic/models/Id'
 
 export const TokenSchema = z.object({
   design: TokenDesignSchema,
@@ -32,5 +30,5 @@ export function validateTokens(tokens: Token[]): Token[] {
 }
 
 export function getTokenUid(tokenUid: TokenUid) {
-  return toUidFromSchema(tokenUid, TokenUidSchema)
+  return TokenUidSchema.parse(tokenUid)
 }

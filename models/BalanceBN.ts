@@ -1,6 +1,5 @@
-import { z } from 'zod'
-import { toUidFromSchema } from 'libs/utils/uid'
 import { getArraySchema } from 'libs/utils/zod'
+import { z } from 'zod'
 import { AddressSchema } from './Address'
 import { AmountBNSchema } from './AmountBN'
 
@@ -28,5 +27,5 @@ export function validateBalancesBN(balances: BalanceBN[]): BalanceBN[] {
 }
 
 export function getBalanceBNUid(balanceUid: BalanceBNUid) {
-  return toUidFromSchema(balanceUid, BalanceBNUidSchema)
+  return BalanceBNUidSchema.parse(balanceUid)
 }

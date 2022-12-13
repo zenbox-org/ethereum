@@ -1,6 +1,6 @@
 import { add, sub } from '../bn/math'
-import { MaxUint256 } from './constants'
 import { bn } from '../bn/utils'
+import { MaxUint256 } from './constants'
 
 export const addUint = add(MaxUint256)
 

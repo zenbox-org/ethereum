@@ -1,6 +1,6 @@
-import { Contract, ContractSchema, parseContractUid } from '../models/Contract'
-import { BscMainnet, BscTestnet, EthMainnet } from '../../blockchain/data/allBlockchainNetworks'
 import { getFinder, getInserter } from 'libs/utils/zod'
+import { BscMainnet, BscTestnet, EthMainnet } from '../../blockchain/data/allBlockchainNetworks'
+import { Contract, ContractSchema, parseContractUid } from '../models/Contract'
 
 export const allContracts: Contract[] = []
 

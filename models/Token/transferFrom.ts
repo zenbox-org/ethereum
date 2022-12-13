@@ -1,6 +1,6 @@
-import { Address } from '../Address'
-import { Amount } from '../../../finance/models/Amount'
 import { impl } from 'libs/utils/todo'
+import { Amount } from '../../../finance/models/Amount'
+import { Address } from '../Address'
 import { Token } from '../Token'
 
 export function transferFrom(token: Token, from: Address, to: Address, amount: Amount) {

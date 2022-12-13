@@ -1,6 +1,5 @@
-import { z } from 'zod'
-import { BigNumber } from 'libs/utils/bignumber'
 import { getDuplicatesRefinement } from 'libs/utils/zod'
+import { z } from 'zod'
 
 export const TokenIssuerSchema = z.object({
   name: z.string().min(1),

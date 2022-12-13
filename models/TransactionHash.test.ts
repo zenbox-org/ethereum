@@ -1,5 +1,5 @@
-import { TransactionHashSchema, validateTransactionHash } from './TransactionHash'
 import { expect } from 'libs/utils/chai'
+import { TransactionHashSchema, validateTransactionHash } from './TransactionHash'
 
 test(validateTransactionHash.name, () => {
   expect(TransactionHashSchema.safeParse('0xdc911d697091321634370956148792f836971728e4cfefb11ff89bf845')).to.have.property('error')

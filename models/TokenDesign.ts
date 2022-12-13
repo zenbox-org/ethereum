@@ -1,10 +1,9 @@
-import { z } from 'zod'
-import { TickerSchema } from '../../finance/models/Ticker'
-import { AmountSchema } from '../../finance/models/Amount'
 import { getDuplicatesRefinement } from 'libs/utils/zod'
+import { z } from 'zod'
+import { AmountSchema } from '../../finance/models/Amount'
+import { TickerSchema } from '../../finance/models/Ticker'
 import { NameSchema } from '../../generic/models/Name'
 import { DecimalsSchema } from './Decimals'
-import { toUidFromSchema } from 'libs/utils/uid'
 
 export const TokenDesignSchema = z.object({
   name: NameSchema,
@@ -22,7 +21,7 @@ export const TokenDesignsSchema = z.array(TokenDesignSchema).superRefine(
 )
 
 export function getTokenDesignUid(design: TokenDesign) {
-  return toUidFromSchema(design, TokenDesignUidSchema)
+  return TokenDesignUidSchema.parse(design)
 }
 
 export type TokenDesign = z.infer<typeof TokenDesignSchema>

@@ -1,9 +1,9 @@
-import { z } from 'zod'
 import { getDuplicatesRefinement } from 'libs/utils/zod'
-import { ContractTypeSchema } from './ContractType'
+import { z } from 'zod'
 import { BlockchainNetworkSchema, BlockchainNetworkUidSchema } from '../../blockchain/models/BlockchainNetwork'
-import { AddressSchema } from './Address'
 import { NotesSchema } from '../../generic/models/Notes'
+import { AddressSchema } from './Address'
+import { ContractTypeSchema } from './ContractType'
 
 export const ContractSchema = z.object({
   type: ContractTypeSchema,

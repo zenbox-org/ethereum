@@ -1,6 +1,7 @@
-import { z } from 'zod'
 import { getArraySchema } from 'libs/utils/zod'
+import { z } from 'zod'
 import { BN } from '../../bn'
+import { isEqualBN } from '../../bn/utils'
 
 export const AmountBNSchema = z.instanceof(BN)
   .refine(n => !n.isNegative())
@@ -26,4 +27,4 @@ export function parseAmountBNUid(amountUid: AmountBNUid): AmountBNUid {
   return AmountBNUidSchema.parse(amountUid)
 }
 
-export const isEqualAmountBN = (a: AmountBN) => (b: AmountBN) => a.eq(b)
+export const isEqualAmountBN = isEqualBN
