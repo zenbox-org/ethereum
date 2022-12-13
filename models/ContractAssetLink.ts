@@ -1,11 +1,11 @@
 import { z } from 'zod'
 import { getDuplicatesRefinement } from 'libs/utils/zod'
-import { TassetSchema } from '../../finance/models/Tasset'
+import { AssetSchema } from '../../finance/models/Asset'
 import { ContractSchema, ContractUidSchema } from './Contract'
 
 export const ContractAssetLinkSchema = z.object({
   contract: ContractSchema,
-  asset: TassetSchema,
+  asset: AssetSchema,
 })
 
 export const ContractAssetLinksSchema = z.array(ContractAssetLinkSchema)
