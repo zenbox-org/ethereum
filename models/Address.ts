@@ -28,11 +28,11 @@ export type Address = z.infer<typeof AddressSchema>
 
 export type AddressUid = z.infer<typeof AddressUidSchema>
 
-export function parseAddress(address: Address): Address {
+export function parseAddress(address: Address | string): Address {
   return AddressSchema.parse(address)
 }
 
-export function parseAddresses(addresss: Address[]): Address[] {
+export function parseAddresses(addresss: (Address | string)[]): Address[] {
   return AddressesSchema.parse(addresss)
 }
 
