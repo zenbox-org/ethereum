@@ -6,7 +6,7 @@ import { AmountBNSchema } from './AmountBN'
 export const BalanceBNSchema = z.object({
   address: AddressSchema,
   amount: AmountBNSchema,
-})
+}).describe('BalanceBN')
 
 export const BalancesBNSchema = getArraySchema(BalanceBNSchema, getBalanceBNUid)
 
