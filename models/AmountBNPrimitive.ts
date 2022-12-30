@@ -6,7 +6,9 @@ import { identity } from 'lodash-es'
 /**
  * Represented as string (primitive type)
  */
-export const AmountBNPrimitiveSchema = z.string().min(1).describe('AmountBNPrimitive')
+export const AmountBNPrimitiveSchema = z.string()
+  .min(1)
+  .describe('AmountBNPrimitive')
 
 export const AmountBNPrimitivesSchema = getArraySchema(AmountBNPrimitiveSchema, identity)
 

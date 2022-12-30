@@ -4,7 +4,7 @@ import { BN } from '../../bn'
 import { isEqualBN } from '../../bn/utils'
 
 export const AmountBNSchema = z.instanceof(BN)
-  .refine(n => !n.isNegative())
+  .refine(n => !n.isNegative(), 'Must be greater or equal to 0')
   .describe('Amount')
 
 export const AmountBNUidSchema = AmountBNSchema
