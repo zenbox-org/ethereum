@@ -1,5 +1,5 @@
 import { getFinder, getInserter } from 'libs/utils/zod'
-import { BscMainnet, BscTestnet, EthMainnet } from '../../blockchain/data/allBlockchainNetworks'
+import { BnbMainnet, BscTestnet, EthMainnet } from '../../blockchain/data/allBlockchainNetworks'
 import { Contract, ContractSchema, parseContractUid } from '../models/Contract'
 
 export const allContracts: Contract[] = []
@@ -21,7 +21,7 @@ export const ColiEthMainnetContract = addContract({
 })
 
 export const ColiBscMainnetContract = addContract({
-  network: BscMainnet,
+  network: BnbMainnet,
   address: '0x3470C81026C8085b7B743695f851353043Ff0d0D',
   type: 'ERC20Token',
   notes: `
@@ -36,7 +36,7 @@ export const BullEthMainnetContract = addContract({
 })
 
 export const ShieldFinanceTokenChainPortBridgeBscMainnetContract = addContract({
-  network: BscMainnet,
+  network: BnbMainnet,
   address: '0x5b16273f4143477066f46a36b31baa5fc4429245',
   type: 'BSCBridgeToken',
 })
@@ -72,7 +72,7 @@ export const BusdEthMainnetContract = addContract({
 })
 
 export const BusdBscMainnetContract = addContract({
-  network: BscMainnet,
+  network: BnbMainnet,
   address: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   type: 'ERC20Token',
 })
@@ -90,7 +90,7 @@ export const UsdtEthMainnetContract = addContract({
 })
 
 export const UsdtBscMainnetContract = addContract({
-  network: BscMainnet,
+  network: BnbMainnet,
   address: '0x55d398326f99059ff775485246999027b3197955',
   type: 'ERC20Token',
 })
@@ -102,7 +102,7 @@ export const UsdcEthMainnetContract = addContract({
 })
 
 export const UsdcBscMainnetContract = addContract({
-  network: BscMainnet,
+  network: BnbMainnet,
   address: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
   type: 'ERC20Token',
 })
@@ -114,7 +114,7 @@ export const DaiEthMainnetContract = addContract({
 })
 
 export const DaiBscMainnetContract = addContract({
-  network: BscMainnet,
+  network: BnbMainnet,
   address: '0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3',
   type: 'ERC20Token',
 })
