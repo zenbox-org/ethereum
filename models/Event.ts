@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import { getArraySchema } from 'libs/utils/zod'
 import { isEqualByDC } from 'libs/utils/lodash'
-import { BlockNumberSchema } from '../../../models/BlockNumber'
+import { BlockNumberSchema } from './BlockNumber'
 import { TransactionHashSchema } from './TransactionHash'
 
 /**
