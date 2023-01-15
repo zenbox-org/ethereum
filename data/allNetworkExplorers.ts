@@ -33,11 +33,11 @@ addNetworkExplorer({
 })
 
 addNetworkExplorer({
-  name: 'bscmainnet',
+  name: 'bnbmainnet',
   url: 'https://bscscan.com',
 })
 
 addNetworkExplorer({
-  name: 'bsctestnet',
+  name: 'bnbtestnet',
   url: 'https://testnet.bscscan.com',
 })

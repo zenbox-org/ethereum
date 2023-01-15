@@ -20,7 +20,7 @@ export const ColiEthMainnetContract = addContract({
   type: 'ERC20Token',
 })
 
-export const ColiBscMainnetContract = addContract({
+export const ColibnbmainnetContract = addContract({
   network: BNBChainMainnet,
   address: '0x3470C81026C8085b7B743695f851353043Ff0d0D',
   type: 'ERC20Token',
@@ -35,7 +35,7 @@ export const BullEthMainnetContract = addContract({
   type: 'ERC20Token',
 })
 
-export const ShieldFinanceTokenChainPortBridgeBscMainnetContract = addContract({
+export const ShieldFinanceTokenChainPortBridgebnbmainnetContract = addContract({
   network: BNBChainMainnet,
   address: '0x5b16273f4143477066f46a36b31baa5fc4429245',
   type: 'BSCBridgeToken',
@@ -71,13 +71,13 @@ export const BusdEthMainnetContract = addContract({
   type: 'ERC20Token',
 })
 
-export const BusdBscMainnetContract = addContract({
+export const BusdbnbmainnetContract = addContract({
   network: BNBChainMainnet,
   address: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   type: 'ERC20Token',
 })
 
-export const BUSDBscTestnetContract = addContract({
+export const BUSDbnbtestnetContract = addContract({
   network: BNBChainTestnet,
   address: '0x8301F2213c0eeD49a7E28Ae4c3e91722919B8B47',
   type: 'ERC20Token',
@@ -89,7 +89,7 @@ export const UsdtEthMainnetContract = addContract({
   type: 'ERC20Token',
 })
 
-export const UsdtBscMainnetContract = addContract({
+export const UsdtbnbmainnetContract = addContract({
   network: BNBChainMainnet,
   address: '0x55d398326f99059ff775485246999027b3197955',
   type: 'ERC20Token',
@@ -101,7 +101,7 @@ export const UsdcEthMainnetContract = addContract({
   type: 'ERC20Token',
 })
 
-export const UsdcBscMainnetContract = addContract({
+export const UsdcbnbmainnetContract = addContract({
   network: BNBChainMainnet,
   address: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
   type: 'ERC20Token',
@@ -113,7 +113,7 @@ export const DaiEthMainnetContract = addContract({
   type: 'ERC20Token',
 })
 
-export const DaiBscMainnetContract = addContract({
+export const DaibnbmainnetContract = addContract({
   network: BNBChainMainnet,
   address: '0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3',
   type: 'ERC20Token',

@@ -51,15 +51,15 @@ export const rinkeby = addNetwork({
   blockGasLimit: 30000000, // https://rinkeby.etherscan.io/blocks
 })
 
-export const bscmainnet = addNetwork({
-  name: 'bscmainnet',
+export const bnbmainnet = addNetwork({
+  name: 'bnbmainnet',
   blockchain: BNBChainMainnet,
   chainId: 56,
   blockGasLimit: 85000000,
 })
 
-export const bsctestnet = addNetwork({
-  name: 'bsctestnet',
+export const bnbtestnet = addNetwork({
+  name: 'bnbtestnet',
   blockchain: BNBChainTestnet,
   chainId: 97,
   blockGasLimit: 30000000,
