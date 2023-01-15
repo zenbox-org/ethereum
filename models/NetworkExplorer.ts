@@ -1,32 +1,33 @@
 import { z } from 'zod'
-import { toUidFromSchema, Uid } from '../../../models/Uid'
-import { getDuplicatesRefinement } from '../../../util/zod'
+import { getArraySchema } from 'libs/utils/zod'
+import { isEqualByDC } from 'libs/utils/lodash'
 import { NetworkNameSchema } from './NetworkName'
 
 export const NetworkExplorerSchema = z.object({
   name: NetworkNameSchema,
   url: z.string().url().min(1),
-})
-
-export const NetworkExplorersSchema = z.array(NetworkExplorerSchema)
-  .superRefine(getDuplicatesRefinement('NetworkExplorer', getNetworkExplorerUid))
+}).describe('NetworkExplorer')
 
 export const NetworkExplorerUidSchema = NetworkExplorerSchema.pick({
   name: true,
 })
 
+export const NetworkExplorersSchema = getArraySchema(NetworkExplorerSchema, parseNetworkExplorerUid)
+
 export type NetworkExplorer = z.infer<typeof NetworkExplorerSchema>
 
 export type NetworkExplorerUid = z.infer<typeof NetworkExplorerUidSchema>
 
-export function validateNetworkExplorer(explorer: NetworkExplorer): NetworkExplorer {
+export function parseNetworkExplorer(explorer: NetworkExplorer): NetworkExplorer {
   return NetworkExplorerSchema.parse(explorer)
 }
 
-export function validateNetworkExplorers(explorers: NetworkExplorer[]): NetworkExplorer[] {
+export function parseNetworkExplorers(explorers: NetworkExplorer[]): NetworkExplorer[] {
   return NetworkExplorersSchema.parse(explorers)
 }
 
-export function getNetworkExplorerUid(networkExplorerUid: NetworkExplorerUid): Uid {
-  return toUidFromSchema(networkExplorerUid, NetworkExplorerUidSchema)
+export function parseNetworkExplorerUid(explorerUid: NetworkExplorerUid): NetworkExplorerUid {
+  return NetworkExplorerUidSchema.parse(explorerUid)
 }
+
+export const isEqualNetworkExplorer = isEqualByDC(parseNetworkExplorerUid)

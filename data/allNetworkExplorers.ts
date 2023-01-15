@@ -1,11 +1,11 @@
-import { getNetworkExplorerUid, NetworkExplorer, NetworkExplorerSchema } from '../models/NetworkExplorer'
-import { getFinder, getInserter } from '../../../util/zod'
+import { NetworkExplorer, NetworkExplorerSchema, parseNetworkExplorerUid } from '../models/NetworkExplorer'
+import { getFinder, getInserter } from '../../utils/zod'
 
 export const allNetworkExplorers: NetworkExplorer[] = []
 
-export const addNetworkExplorer = getInserter('NetworkExplorer', NetworkExplorerSchema, getNetworkExplorerUid, allNetworkExplorers)
+export const addNetworkExplorer = getInserter('NetworkExplorer', NetworkExplorerSchema, parseNetworkExplorerUid, allNetworkExplorers)
 
-export const findNetworkExplorer = getFinder(getNetworkExplorerUid, allNetworkExplorers)
+export const findNetworkExplorer = getFinder(parseNetworkExplorerUid, allNetworkExplorers)
 
 addNetworkExplorer({
   name: 'hardhat',
