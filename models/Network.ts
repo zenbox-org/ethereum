@@ -1,9 +1,11 @@
 import { z } from 'zod'
 import { getDuplicatesRefinement } from '../../../util/zod'
 import { NetworkNameSchema } from './NetworkName'
+import { BlockchainNetworkSchema } from '../../blockchain/models/BlockchainNetwork'
 
 export const NetworkSchema = z.object({
   name: NetworkNameSchema,
+  blockchain: BlockchainNetworkSchema,
   chainId: z.number().int().positive(),
   blockGasLimit: z.number().int().min(1000),
 })
