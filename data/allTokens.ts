@@ -1,6 +1,6 @@
 import { getFinder, getInserter } from 'libs/utils/zod'
 import { getTokenUid, Token, TokenSchema } from '../models/Token'
-import { ColibnbmainnetContract, ColiEthMainnetContract, UsdcEthMainnetContract, UsdtEthMainnetContract } from './allContracts'
+import { ColiBNBChainMainnetContract, ColiEthMainnetContract, UsdcEthMainnetContract, UsdtEthMainnetContract } from './allContracts'
 import { ColiDesign, USDCDesign, USDTDesign } from './allTokenDesigns'
 
 export const allTokens: Token[] = []
@@ -16,7 +16,7 @@ export const COLIEthMainnet = addToken({
 
 export const COLIbnbmainnet = addToken({
   design: ColiDesign,
-  contract: ColibnbmainnetContract,
+  contract: ColiBNBChainMainnetContract,
 })
 
 export const USDTEthMainnet = addToken({

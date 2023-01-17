@@ -20,7 +20,7 @@ export const ColiEthMainnetContract = addContract({
   type: 'ERC20Token',
 })
 
-export const ColibnbmainnetContract = addContract({
+export const ColiBNBChainMainnetContract = addContract({
   network: BNBChainMainnet,
   address: '0x3470C81026C8085b7B743695f851353043Ff0d0D',
   type: 'ERC20Token',
@@ -71,7 +71,7 @@ export const BusdEthMainnetContract = addContract({
   type: 'ERC20Token',
 })
 
-export const BusdbnbmainnetContract = addContract({
+export const BusdBNBChainMainnetContract = addContract({
   network: BNBChainMainnet,
   address: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
   type: 'ERC20Token',
@@ -89,7 +89,7 @@ export const UsdtEthMainnetContract = addContract({
   type: 'ERC20Token',
 })
 
-export const UsdtbnbmainnetContract = addContract({
+export const UsdtBNBChainMainnetContract = addContract({
   network: BNBChainMainnet,
   address: '0x55d398326f99059ff775485246999027b3197955',
   type: 'ERC20Token',
@@ -101,7 +101,7 @@ export const UsdcEthMainnetContract = addContract({
   type: 'ERC20Token',
 })
 
-export const UsdcbnbmainnetContract = addContract({
+export const UsdcBNBChainMainnetContract = addContract({
   network: BNBChainMainnet,
   address: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d',
   type: 'ERC20Token',
@@ -113,7 +113,7 @@ export const DaiEthMainnetContract = addContract({
   type: 'ERC20Token',
 })
 
-export const DaibnbmainnetContract = addContract({
+export const DaiBNBChainMainnetContract = addContract({
   network: BNBChainMainnet,
   address: '0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3',
   type: 'ERC20Token',
