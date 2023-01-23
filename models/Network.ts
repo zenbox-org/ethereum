@@ -3,11 +3,12 @@ import { getDuplicatesRefinement } from '../../utils/zod'
 import { NetworkNameSchema } from './NetworkName'
 import { BlockchainNetworkSchema } from '../../blockchain/models/BlockchainNetwork'
 import { DurationSchema } from '../../generic/models/Duration'
+import { ChainIdSchema } from './ChainId'
 
 export const NetworkSchema = z.object({
   name: NetworkNameSchema,
   blockchain: BlockchainNetworkSchema,
-  chainId: z.number().int().positive(),
+  chainId: ChainIdSchema,
   blockTime: DurationSchema,
   blockGasLimit: z.number().int().min(1000),
 })

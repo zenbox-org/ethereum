@@ -1,6 +1,7 @@
 import { z } from 'zod'
+import { NaturalNumberSchema } from '../../generic/models/NaturalNumber'
 
-export const BlockNumberSchema = z.number().int().nonnegative()
+export const BlockNumberSchema = NaturalNumberSchema
 
 export type BlockNumber = z.infer<typeof BlockNumberSchema>
 
