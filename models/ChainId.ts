@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import { getArraySchema } from 'libs/utils/zod'
 import { isEqualSC } from 'libs/utils/lodash'
-import { identity } from 'lodash-es'
+import { identity } from 'remeda'
 
 export const ChainIdSchema = z.number().int().positive().describe('ChainId')
 
