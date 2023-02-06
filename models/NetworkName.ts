@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-export const NetworkNameSchema = z.enum(['hardhat', 'localhost', 'mainnet', 'goerli', 'ropsten', 'rinkeby', 'bnbtestnet', 'bnbmainnet', 'avaxtestnet', 'avaxmainnet'])
+export const NetworkNameSchema = z.enum(['hardhat', 'localhost', 'mainnet', 'goerli', 'ropsten', 'rinkeby', 'bnbmainnet', 'bnbtestnet', 'avaxmainnet', 'avaxtestnet', 'cantomainnet', 'cantotestnet'])
 
 const { hardhat, localhost } = NetworkNameSchema.enum
 

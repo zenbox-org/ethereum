@@ -1,7 +1,7 @@
 import { Network, NetworkSchema, parseNetworkUid } from '../models/Network'
 import { getFinder, getInserter } from '../../utils/zod'
 import { identity, minBy } from 'remeda'
-import { BNBChainMainnet, BNBChainTestnet, EthGoerli, EthHardhat, EthMainnet, EthRinkeby, EthRopsten } from '../../blockchain/data/allBlockchainNetworks'
+import { BNBChainMainnet, BNBChainTestnet, CantoMainnet, CantoTestnet, EthGoerli, EthHardhat, EthMainnet, EthRinkeby, EthRopsten } from '../../blockchain/data/allBlockchainNetworks'
 import { seconds } from '../../utils/duration'
 
 export const allNetworks: Network[] = []
@@ -70,5 +70,24 @@ export const bnbtestnet = addNetwork({
   blockchain: BNBChainTestnet,
   chainId: 97,
   blockTime: 3 * seconds,
+  blockGasLimit: 30000000,
+})
+
+/**
+ * https://docs.canto.io/evm-development/overview
+ */
+export const cantomainnet = addNetwork({
+  name: 'cantomainnet',
+  blockchain: CantoMainnet,
+  chainId: 7700,
+  blockTime: 6 * seconds,
+  blockGasLimit: 30000000,
+})
+
+export const cantotestnet = addNetwork({
+  name: 'cantotestnet',
+  blockchain: CantoTestnet,
+  chainId: 740,
+  blockTime: 6 * seconds,
   blockGasLimit: 30000000,
 })
