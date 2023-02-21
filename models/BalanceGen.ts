@@ -1,4 +1,6 @@
-import * as $ from '../../finance/models/BalanceGen'
-import { Address } from './Address'
+export interface BalanceGen<Address, Amount> {
+  address: Address
+  amount: Amount
+}
 
-export type BalanceGen<Asset, Amount> = $.BalanceGen<Address, Asset, Amount>
+export type BalanceGenTuple<Address, Amount> = [Address, Amount]
