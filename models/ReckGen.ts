@@ -1,4 +1,4 @@
-import * as $ from '../../finance/models/ReckGen'
+import * as $ from '../../finance/models/FintGen'
 import { Address } from './Address'
 
-export type ReckGen<Asset, Amount> = $.ReckGen<Address, Asset, Amount>
+export type ReckGen<Asset, Amount> = $.FintGen<Address, Asset, Amount>
