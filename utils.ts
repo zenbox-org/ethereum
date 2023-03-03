@@ -1,4 +1,4 @@
-import { toRenderedAmountBND } from '../utils/bignumber.convert'
+import { toRenderedAmountBND } from '../utils/BigNumber.convert'
 import { DefaultDecimals } from './constants'
 
 /**

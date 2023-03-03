@@ -1,6 +1,6 @@
 import { BN } from '../bn'
 import { bn } from '../bn/utils'
-import { toRenderedAmountBND } from '../utils/bignumber.convert'
+import { toRenderedAmountBND } from '../utils/BigNumber.convert'
 
 export const MaxUint256 = BN.from('0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
 

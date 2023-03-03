@@ -1,4 +1,4 @@
-import { num } from 'libs/utils/bignumber'
+import { num } from 'libs/utils/BigNumber.utils'
 import { todo } from 'libs/utils/todo'
 import { getFinder, getInserter } from 'libs/utils/zod'
 import { getTokenDesignUid, TokenDesign, TokenDesignSchema } from '../models/TokenDesign'
