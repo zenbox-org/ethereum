@@ -2,11 +2,11 @@ import { getArraySchema } from 'libs/utils/zod'
 import { z } from 'zod'
 import { BN } from '../../bn'
 import { isEqualBN } from '../../bn/utils'
-import { MaxUint256 } from '../constants'
+import { uint256Max } from '../../bn/constants'
 
 export const AmountUint256BNSchema = z.instanceof(BN)
   .refine(n => !n.isNegative())
-  .refine(n => n.lte(MaxUint256))
+  .refine(n => n.lte(uint256Max))
   .describe('AmountUint256BN')
 
 export const AmountUint256BNUidSchema = AmountUint256BNSchema
