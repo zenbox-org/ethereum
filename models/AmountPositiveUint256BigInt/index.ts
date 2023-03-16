@@ -1,6 +1,6 @@
-import { bigint, z } from 'zod'
 import { getArraySchema } from 'libs/utils/zod'
-import { eq } from 'libs/utils/lodash'
+import { equals } from 'remeda'
+import { bigint, z } from 'zod'
 import { uint256Max } from '../../../bn/constants'
 
 export const AmountPositiveUint256BigIntSchema = bigint()
@@ -20,4 +20,4 @@ export function parseAmountPositiveUint256BigInts(ints: AmountPositiveUint256Big
   return AmountPositiveUint256BigIntsSchema.parse(ints)
 }
 
-export const isEqualAmountPositiveUint256BigInt = eq
+export const isEqualAmountPositiveUint256BigInt = equals

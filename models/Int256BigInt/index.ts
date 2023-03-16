@@ -1,7 +1,7 @@
-import { bigint, z } from 'zod'
 import { getArraySchema } from 'libs/utils/zod'
-import { eq } from 'libs/utils/lodash'
-import { uint256MaxN } from '../../../bn/constants'
+import { equals } from 'remeda'
+import { bigint, z } from 'zod'
+import { uint256MaxN } from '../../constants'
 
 export const Int256BigIntSchema = bigint()
   .refine(n => n >= -uint256MaxN && n <= uint256MaxN, 'Must be between min int256 and max int256')
@@ -19,4 +19,4 @@ export function parseInt256BigInts(ints: Int256BigInt[]): Int256BigInt[] {
   return Int256BigIntsSchema.parse(ints)
 }
 
-export const isEqualInt256BigInt = eq
+export const isEqualInt256BigInt = equals
