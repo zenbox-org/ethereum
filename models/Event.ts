@@ -1,11 +1,11 @@
-import { z } from 'zod'
-import { getArraySchema } from 'libs/utils/zod'
 import { isEqualByD, isEqualByDC } from 'libs/utils/lodash'
-import { BlockNumberSchema } from './BlockNumber'
-import { TransactionHashSchema } from './TransactionHash'
+import { getArraySchema } from 'libs/utils/zod'
+import { z } from 'zod'
 import { NaturalNumberSchema } from '../../generic/models/NaturalNumber'
 import { BlockHashSchema } from './BlockHash'
+import { BlockNumberSchema } from './BlockNumber'
 import { ChainIdSchema } from './ChainId'
+import { TransactionHashSchema } from './TransactionHash'
 
 /**
  * IMPORTANT: always filter by `removed` field before consuming the log array

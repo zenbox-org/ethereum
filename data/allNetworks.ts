@@ -1,8 +1,8 @@
-import { Network, NetworkSchema, parseNetworkUid } from '../models/Network'
-import { getFinder, getInserter } from '../../utils/zod'
 import { identity, minBy } from 'remeda'
-import { BNBChainMainnet, BNBChainTestnet, CantoMainnet, CantoTestnet, EthGoerli, EthHardhat, EthMainnet, EthRinkeby, EthRopsten } from '../../blockchain/data/allBlockchainNetworks'
+import { BNBChainMainnet, BNBChainTestnet, CantoMainnet, CantoTestnet, EthereumGoerli, EthereumHardhat, EthereumMainnet, EthereumRinkeby, EthereumRopsten } from '../../blockchain/data/allBlockchainNetworks'
 import { seconds } from '../../utils/duration'
+import { getFinder, getInserter } from '../../utils/zod'
+import { Network, NetworkSchema, parseNetworkUid } from '../models/Network'
 
 export const allNetworks: Network[] = []
 
@@ -19,7 +19,7 @@ export const getMinBlockGasLimit = () => minBy(allNetworks.map(n => n.blockGasLi
  */
 export const hardhat = addNetwork({
   name: 'hardhat',
-  blockchain: EthHardhat,
+  blockchain: EthereumHardhat,
   chainId: 31337,
   blockTime: 0, // local mining on-demand
   blockGasLimit: 30000000,
@@ -27,7 +27,7 @@ export const hardhat = addNetwork({
 
 export const mainnet = addNetwork({
   name: 'mainnet',
-  blockchain: EthMainnet,
+  blockchain: EthereumMainnet,
   chainId: 1,
   blockTime: 15 * seconds,
   blockGasLimit: 30000000, // https://etherscan.io/blocks
@@ -35,7 +35,7 @@ export const mainnet = addNetwork({
 
 export const ropsten = addNetwork({
   name: 'ropsten',
-  blockchain: EthRopsten,
+  blockchain: EthereumRopsten,
   chainId: 3,
   blockTime: 15 * seconds,
   blockGasLimit: 8000000, // https://ropsten.etherscan.io/blocks
@@ -43,7 +43,7 @@ export const ropsten = addNetwork({
 
 export const rinkeby = addNetwork({
   name: 'rinkeby',
-  blockchain: EthRinkeby,
+  blockchain: EthereumRinkeby,
   chainId: 4,
   blockTime: 15 * seconds,
   blockGasLimit: 30000000, // https://rinkeby.etherscan.io/blocks
@@ -51,7 +51,7 @@ export const rinkeby = addNetwork({
 
 export const goerli = addNetwork({
   name: 'goerli',
-  blockchain: EthGoerli,
+  blockchain: EthereumGoerli,
   chainId: 5,
   blockTime: 15 * seconds,
   blockGasLimit: 30000000, // https://goerli.etherscan.io/blocks
