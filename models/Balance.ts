@@ -1,4 +1,4 @@
-import { getDuplicatesRefinement } from 'libs/utils/zod'
+import { getArraySchema } from 'libs/utils/zod'
 import { z } from 'zod'
 import { AmountSchema } from '../../finance/models/Amount'
 import { AddressSchema } from './Address'
@@ -6,14 +6,13 @@ import { AddressSchema } from './Address'
 export const BalanceSchema = z.object({
   address: AddressSchema,
   amount: AmountSchema,
-})
-
-export const BalancesSchema = z.array(BalanceSchema)
-  .superRefine(getDuplicatesRefinement('Balance', getBalanceUid))
+}).describe('Balance')
 
 export const BalanceUidSchema = BalanceSchema.pick({
   address: true,
 })
+
+export const BalancesSchema = getArraySchema(BalanceSchema, getBalanceUid)
 
 export type Balance = z.infer<typeof BalanceSchema>
 
