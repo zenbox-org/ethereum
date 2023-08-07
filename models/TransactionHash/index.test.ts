@@ -1,4 +1,4 @@
-import { expect } from 'libs/utils/chai'
+import { expect } from 'libs/chai/init'
 import { parseTransactionHash, TransactionHashSchema } from './index'
 
 test(parseTransactionHash.name, () => {
