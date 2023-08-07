@@ -1,6 +1,6 @@
+import { toRenderedAmountBND } from '../bignumber-bn/conversions'
 import { int256Max, int256Min, uint128Max, uint256Max } from '../bn/constants'
 import { bn } from '../bn/utils'
-import { toRenderedAmountBND } from '../utils/BigNumber/conversions'
 
 export const DefaultDecimals = bn(18)
 
