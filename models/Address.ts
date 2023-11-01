@@ -2,21 +2,11 @@ import { getAddress as normalizeAddress } from 'ethers/lib/utils'
 import { isEqualByDC } from 'libs/utils/lodash'
 import { getArraySchema } from 'libs/utils/zod'
 import { z } from 'zod'
+import { superRefineAddress } from './Address/refine'
 
-export const AddressSchema = z.string().superRefine((value, ctx) => {
-  try {
-    normalizeAddress(value)
-  } catch (error) {
-    if (error instanceof Error) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: error.toString(),
-      })
-    } else {
-      throw error
-    }
-  }
-}).transform(normalizeAddress).describe('Address')
+export const AddressSymbol: unique symbol = Symbol()
+
+export const AddressSchema = z.string().superRefine(superRefineAddress).transform(normalizeAddress).brand(AddressSymbol).describe('Address')
 
 export const AddressUidSchema = AddressSchema
 
