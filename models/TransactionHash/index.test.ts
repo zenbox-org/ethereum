@@ -1,3 +1,4 @@
+import { test } from '@jest/globals'
 import { expect } from 'libs/chai/init'
 import { parseTransactionHash, TransactionHashSchema } from './index'
 
