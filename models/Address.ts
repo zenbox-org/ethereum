@@ -32,4 +32,6 @@ export function parseAddressUid(addressUid: AddressUid): AddressUid {
 
 export const isEqualAddress = isEqualByDC(parseAddressUid)
 
-export const toAddresses = (objects: WithAddress[]) => objects.map(o => o.address)
+export const toAddress = <T extends WithAddress>(object: T) => object.address
+
+export const toAddresses = <T extends WithAddress>(objects: T[]) => objects.map(o => o.address)
